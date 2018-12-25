@@ -1,8 +1,19 @@
-<h1>ID: <%= @task.id %>の詳細ページ</h1>
+<h1>ID: <%= @task.id %>`s Detail Page</h1>
 
-<p><%= @task.status %></p>
-<p><%= @task.content %></p>
+<table class="table table-bordered">
+  <tr>
+    <th>ID</th>
+    <td><%= @task.id %></td>
+  </tr>
+  <tr>
+    <th>STATUS</th>
+    <td><%= @task.status %></td>
+  </tr>
+  <tr>
+    <th>CONTENT</th>
+    <td><%= @task.content %></td>
+  </tr>
+</table>
 
-<%= link_to '一覧に戻る', tasks_path %>
-<%= link_to 'タスクを更新する', edit_task_path(@task) %>
-<%= link_to 'このメッセージを削除する', @task, method: :delete, data:{confirm: '本当に削除して宜しいでしょうか？'} %>
+<%= link_to 'Update', edit_task_path(@task) , class: 'btn btn-default' %>
+<%= link_to 'Delete', @task, method: :delete, data:{confirm: 'Are you sure you want to delete this tusk ? '},class:'btn btn-danger' %>
